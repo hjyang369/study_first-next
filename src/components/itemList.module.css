@@ -1,0 +1,23 @@
+.item_detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+.product_data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.item_img {
+  width: 5em;
+}
+/* .item_name {
+}
+.item_brand {
+}
+.item_type {
+} */
+.item_price {
+  color: rgb(124, 124, 243);
+}
