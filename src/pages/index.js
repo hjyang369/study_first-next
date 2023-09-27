@@ -41,7 +41,7 @@ export default function Home({ list }) {
 
 //Head 는 next/head에서 import 해옴
 //        title, metatag 넣어주면 됨
-//잔디야 심어져라
+//잔디야
 
 export const getStaticProps = async () => {
   const API_URL = process.env.API_URL;
