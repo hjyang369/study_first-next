@@ -41,6 +41,7 @@ export default function Home({ list }) {
 
 //Head 는 next/head에서 import 해옴
 //        title, metatag 넣어주면 됨
+//ghkrdlswnd
 
 export const getStaticProps = async () => {
   const API_URL = process.env.API_URL;
