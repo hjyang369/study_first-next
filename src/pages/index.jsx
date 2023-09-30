@@ -1,8 +1,7 @@
 import Head from "next/head";
 import axios from "axios";
-import { useEffect, useState } from "react";
 import ItemList from "@/components/ItemList";
-import { Divider, Header, Loader } from "semantic-ui-react";
+import { Divider, Header } from "semantic-ui-react";
 
 export default function Home({ list }) {
   // const [productListData, setProductListData] = useState([]);
@@ -28,24 +27,23 @@ export default function Home({ list }) {
 
       <Header as="h3">베스트 상품</Header>
       <Divider />
-      <ItemList productListData={list.slice(0, 9)} />
+      <ItemList productListData={list?.slice(0, 9)} />
       <Header as="h3">신상품</Header>
       <Divider />
-      <ItemList productListData={list.slice(9, 18)} />
+      <ItemList productListData={list?.slice(9, 18)} />
       <Header as="h3">추천 상품</Header>
       <Divider />
-      <ItemList productListData={list.slice(18)} />
+      <ItemList productListData={list?.slice(18)} />
     </div>
   );
 }
 
 //Head 는 next/head에서 import 해옴
 //        title, metatag 넣어주면 됨
-// 잔디
 
 export const getStaticProps = async () => {
-  const API_URL = process.env.API_URL;
-  const res = await axios.get(API_URL);
+  const api_url = process.env.NEXT_PUBLIC_API_URL;
+  const res = await axios.get(api_url);
   const data = res.data;
   return {
     props: {

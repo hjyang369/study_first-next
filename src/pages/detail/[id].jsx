@@ -1,10 +1,11 @@
 import ItemDetail from "@/components/ItemDetail";
 import axios from "axios";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 //getStaticPath 라우팅방식 구현
 const Post = ({ item, name }) => {
-  console.log(name);
+  const router = useRouter();
   return (
     <div>
       {item && (
@@ -27,18 +28,18 @@ export default Post;
 export async function getStaticPaths() {
   return {
     paths: [
-      { params: { id: "740" } },
-      { params: { id: "730" } },
-      { params: { id: "729" } },
+      { params: { id: "560" } },
+      { params: { id: "559" } },
+      { params: { id: "558" } },
     ],
-    fallback: false,
+    fallback: true,
   };
 }
 
 export async function getStaticProps(context) {
   const id = context.params.id;
-  const API_URL = `http://makeup-api.herokuapp.com/api/v1/products/${id}.json`;
-  const res = await Axios.get(API_URL);
+  const api_url = `http://makeup-api.herokuapp.com/api/v1/products/${id}.json`;
+  const res = await axios.get(api_url);
   const data = res.data;
 
   return {
